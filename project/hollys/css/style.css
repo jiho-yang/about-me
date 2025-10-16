@@ -1,0 +1,490 @@
+header {
+    width: 100%;
+}
+
+.header-inner {
+    width: 100%;
+    height: auto;
+}
+
+.header-bg {
+    position: relative;
+    width: 100%;
+    /* height: 720px; */
+    overflow: hidden;
+}
+
+/* .main-slide {
+    height: 100%;
+} */
+
+.main-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-wrap {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.menu-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 260px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    z-index: 1;
+}
+
+.menu-wrap:hover::after {
+    opacity: 1;
+}
+
+.menu-wrap:hover .sub-menu {
+    display: block;
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.menu>ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>ul>li {
+    position: relative;
+}
+
+.menu-inner {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: 90px;
+    height: 90px;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu .sub-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0 0;
+    background: transparent;
+    z-index: 2;
+}
+
+.menu .sub-menu li a {
+    display: block;
+    padding: 6px 0;
+    color: #222;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu .sub-menu li a:hover{ color:#a42228; }
+
+.menu:hover .sub-menu {
+    display: block;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.single-item {
+    position: relative;
+}
+
+/* slick dots 커스텀 */
+.single-item .slick-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 각각의 dot */
+.single-item .slick-dots li button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #e1e1e0;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+}
+
+/* 활성화된 dot */
+.single-item .slick-dots li.slick-active button {
+    background-color: #a42228;
+}
+
+/* ===================== */
+
+/* 래퍼 */
+.about-mall {
+    position: relative;
+    max-width: 1400px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* 슬라이더(값만 바꿔서 전체 조정) */
+.center {
+    position: relative;
+    /* ← 화살표 절대배치 기준 */
+    --card-w: 340px;
+    /* 카드(슬라이드) 고정 너비 */
+    --gap: 12px;
+    /* 카드 좌우 간격 */
+    --arrow: 50px;
+    /* 화살표 아이콘 크기(px) */
+    margin-top: 50px;
+}
+
+/* 리스트 가장자리 보정(간격 만큼 음수 마진) */
+.center .slick-list {
+    margin: 0 calc(var(--gap) * -1);
+}
+
+/* 카드 공통 */
+.center .slick-slide {
+    padding: 0 var(--gap);
+    height: 420px;
+    /* 필요 없으면 제거 가능 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: .6;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+/* 카드 안의 이미지 */
+.center .slick-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* 비율 유지하며 카드 박스 채움 */
+    display: block;
+    border-radius: 10px;
+}
+
+/* 가운데 활성화 카드 강조 */
+.center .slick-center {
+    opacity: 1;
+    /* transform: scale(1.1); */
+    /* 살짝 확대 (원하면 조절/삭제) */
+    z-index: 2;
+}
+
+/* 점(dot) 위치(쓰는 경우) */
+.slick-dots {
+    bottom: -40px;
+}
+
+/* ====== 커스텀 화살표 ====== */
+
+/* 버튼 베이스 */
+.center .slick-prev,
+.center .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.center .slick-prev i,
+.center .slick-next i {
+    font-size: var(--arrow);
+    color: #a42228;
+}
+
+/* 중앙 카드 기준 '고정' 위치 */
+.center .slick-prev {
+    left: calc(50% - (var(--card-w) / 2) - var(--gap) - var(--arrow));
+}
+
+.center .slick-next {
+    left: calc(50% + (var(--card-w) / 2) + var(--gap));
+}
+
+/* 아이콘 교체(기본/호버) */
+.slick-prev i.hover,
+.slick-next i.hover {
+    display: none;
+}
+
+.slick-prev:hover i.default,
+.slick-next:hover i.default {
+    display: none;
+}
+
+.slick-prev:hover i.hover,
+.slick-next:hover i.hover {
+    display: inline;
+}
+
+.center .slick-cloned {
+    transition: none !important;
+}
+
+/* JS에서 .is-wrap 클래스가 붙은 동안 전환 OFF */
+.center.is-wrap .slick-slide {
+    transition: none !important;
+}
+
+/* .center .slick-slide, .center .slick-center{ transform:none!important; transition:none!important; } */
+
+
+
+/* ===================== */
+.about-fc {
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    /* margin: 100px auto; */
+    position: relative;
+    background: url("../img/fc-bg.jpg") no-repeat center;
+}
+
+.about-fc::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.about-fc .fc-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #fff;
+}
+
+.about-fc .fc-txt h2 {
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.about-fc .fc-txt p {
+    font-size: 20px;
+    margin: 15px 0 30px;
+}
+
+.about-fc .fc-txt a {
+    display: inline-flex;
+    gap: 16px;
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #a42228;
+    font-weight: bold;
+}
+
+.about-fc .fc-txt a:hover {
+    background-color: #000;
+}
+
+
+/* ===================== */
+.membership {
+    /* height: 80vh; */
+    text-align: center;
+    /* position: relative; */
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.membership .member-inner {
+    display: flex;
+    justify-content: space-evenly;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    padding: 150px 0;
+}
+
+.membership .member-inner .mem-fir,
+.membership .member-inner .mem-sec {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.membership .member-inner div>.mem-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.membership .member-inner div>.mem-text a {
+    display: inline-flex;
+    gap: 16px;
+    color: #a42228;
+    margin-top: 20px;
+}
+
+.membership .member-inner div>.mem-text a i {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.membership .member-inner div>.mem-text a:hover i {
+    transform: translateX(17px);
+}
+
+
+.membership .member-inner .mem-fir .mem-img,
+.membership .member-inner .mem-sec .mem-img {
+    width: 150px;
+}
+
+.membership .member-inner>div .mem-img img {
+    width: 100%;
+}
+
+
+
+.event-wrap {
+    width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.event-wrap .event-item {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100px 0;
+}
+
+.event-wrap .event-item li {
+    width: 28%;
+    height: auto;
+}
+
+
+.event-wrap .event-item li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.event-wrap .event-item li a img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+footer {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #a42228;
+    color: #fff;
+}
+
+footer .footer-inner {
+    width: 1400px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+
+footer .footer-inner .footer-policy {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+footer .footer-inner .footer-policy li::after {
+    content: "|";
+    margin: 0 8px;
+    color: #fff;
+}
+
+
+footer .footer-inner .footer-policy li:last-child::after {
+    content: "";
+}
+
+footer .footer-inner p {
+    opacity: .5;
+}
