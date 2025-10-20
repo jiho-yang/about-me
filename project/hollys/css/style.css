@@ -134,10 +134,9 @@ header {
 
 .menu .sub-menu li a {
     display: block;
-    padding: 8px 12px;
+    padding: 8px 0px;
     color: #222;
     text-decoration: none;
-    white-space: nowrap;
 }
 
 .menu .sub-menu li a:hover{ color:#a42228; }
