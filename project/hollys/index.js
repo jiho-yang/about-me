@@ -70,3 +70,93 @@ $(document).ready(function () {
         $(this).removeClass('is-wrap');
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = Array.from(document.querySelectorAll('.page-section'));
+    if (!sections.length) return;
+
+    let currentIndex = 0;
+    let isScrolling = false;
+    const SCROLL_DURATION = 700; // ms (스크롤 막는 시간)
+
+    function scrollToSection(index) {
+        if (index < 0 || index >= sections.length) return;
+        isScrolling = true;
+        currentIndex = index;
+
+        const targetTop = sections[index].offsetTop;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+        });
+
+        // 일정 시간 지나고 다시 스크롤 허용
+        setTimeout(() => {
+            isScrolling = false;
+        }, SCROLL_DURATION);
+    }
+
+    // 현재 화면에 제일 가까운 섹션 index 갱신
+    function updateCurrentIndex() {
+        const scrollPos = window.scrollY || window.pageYOffset;
+        let nearest = 0;
+        let minDiff = Infinity;
+
+        sections.forEach((sec, idx) => {
+            const diff = Math.abs(sec.offsetTop - scrollPos);
+            if (diff < minDiff) {
+                minDiff = diff;
+                nearest = idx;
+            }
+        });
+
+        currentIndex = nearest;
+    }
+
+    // 마우스 휠 이벤트
+    window.addEventListener('wheel', function (e) {
+        if (isScrolling) {
+            e.preventDefault();
+            return;
+        }
+
+        // 스크롤 방향
+        const delta = e.deltaY;
+
+        updateCurrentIndex(); // 현재 섹션 다시 계산
+
+        if (delta > 0 && currentIndex < sections.length - 1) {
+            e.preventDefault();
+            scrollToSection(currentIndex + 1); // 아래로
+        } else if (delta < 0 && currentIndex > 0) {
+            e.preventDefault();
+            scrollToSection(currentIndex - 1); // 위로
+        }
+    }, { passive: false });
+
+    // 터치(모바일)도 지원하고 싶으면 아래 주석 풀기
+    /*
+    let touchStartY = 0;
+    window.addEventListener('touchstart', function (e) {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', function (e) {
+      if (isScrolling) return;
+
+      const touchEndY = e.changedTouches[0].clientY;
+      const diff = touchStartY - touchEndY;
+
+      updateCurrentIndex();
+
+      if (diff > 50 && currentIndex < sections.length - 1) {
+        scrollToSection(currentIndex + 1); // 아래로 스와이프
+      } else if (diff < -50 && currentIndex > 0) {
+        scrollToSection(currentIndex - 1); // 위로 스와이프
+      }
+    }, { passive: true });
+    */
+});

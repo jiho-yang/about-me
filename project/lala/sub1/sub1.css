@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Gaegu|Jua|Sriracha&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.after::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+/*-------------------- header------------------- */
+
+.headerWrap {
+    width: 100%;
+}
+
+.headerWrap>#header {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.headerWrap>#header>.logo {
+    width: 100%;
+    text-align: center;
+}
+
+.headerWrap>#header>.logo>img {
+    width: 20%;
+
+}
+
+.headerWrap>#header>ul {
+    width: 100%;
+}
+
+.headerWrap>#header>ul>li {
+    width: 25%;
+    text-align: center;
+    float: left;
+    color: #171c61;
+    font-size: 20px;
+    font-family: 'Baloo', cursive;
+}
+
+.headerWrap>#header>ul>li>a {
+    display: block;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+
+
+
+/*---------------------contents-------------------- */
+#contents {
+    width: 100%;
+    padding: 0px 0px 200px;
+}
+
+
+
+/* ------------------------con1---------------------- */
+
+#contents>.con1 {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 100px 0px 200px;
+}
+
+#contents>.con1 {
+    width: 100%;
+}
+
+#contents>.con1>div {
+    width: 50%;
+    float: left;
+}
+
+#contents>.con1>.imgBox {
+    height: 750px;
+    background: url(img/con1-1.jpg) no-repeat;
+    background-size: cover;
+}
+
+#contents>.con1>.textBox {
+    padding: 184px;
+    box-sizing: border-box;
+    line-height: 40px;
+}
+
+#contents>.con1>.textBox>h1 {
+    padding: 30px 0;
+    font-family: 'Sriracha', cursive;
+    font-weight: normal;
+    font-size: 3rem;
+}
+
+#contents>.con1>.textBox>p>span {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 0px 30px;
+    color: #171c61;
+    font-family: 'Baloo', cursive;
+}
+
+
+
+
+
+
+/*----------------------con2----------------------  */
+
+.con2 {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+
+.con2>.flipBox {
+    perspective: 1000px;
+    border: 2px solid rgba(0, 0, 0, 0) !important;
+    width: 23.5%;
+    margin-right: 2%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.con2>div:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.front1 {
+    background: url(img/jam1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back1 {
+    background: url(img/back1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front2 {
+    background: url(img/jam2.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back2 {
+    background: url(img/back2.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front3 {
+    background: url(img/jam3.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back3 {
+    background: url(img/back3.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front4 {
+    background: url(img/jam4.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back4 {
+    background: url(img/back4.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front5 {
+    background: url(img/jam5.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back5 {
+    background: url(img/back5.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front6 {
+    background: url(img/jam6.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back6 {
+    background: url(img/back6.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front7 {
+    background: url(img/jam7.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back7 {
+    background: url(img/back7.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.front8 {
+    background: url(img/jam8.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.back8 {
+    background: url(img/back8.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+.con2>.flipBox:hover .bgBox {
+    transform: rotateY(180deg);
+}
+
+
+.con2>.flipBox {
+    height: 500px;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.con2>div>.bgBox {
+    width: 100%;
+    height: 400px;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.con2>div>p {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 30px 0;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-family: 'Gaegu', cursive;
+    font-weight: bold;
+
+}
+
+.con2>div>p>span {
+    display: block;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------con3----------------------  */
+
+#contents>.con3 {
+    width: 100%;
+    padding: 200px 0;
+}
+
+#contents>.con3>.bg {
+    width: 100%;
+    height: 500px;
+    background: url(img/con2-1.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#contents>.con3>.bg>h1 {
+    color: #fff;
+    text-align: center;
+    line-height: 500px;
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: 10px;
+    text-shadow: 5px 5px 5px #000;
+    font-family: 'Sriracha', cursive;
+}
+
+
+
+
+
+
+
+/*------------------------con4-------------------- */
+
+#contents>.con4 {
+    width: 1240px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+#contents>.con4>div {
+    width: 32%;
+    float: left;
+    margin-right: 2%;
+}
+
+#contents>.con4>div:last-child {
+    margin-right: 0;
+}
+
+#contents>.con4>div>.img1 {
+    height: 200px;
+    background: url(img/con3-1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#contents>.con4>div>.img2 {
+    height: 200px;
+    background: url(img/con3-2.png) no-repeat center;
+    background-size: cover;
+}
+
+#contents>.con4>div>.img3 {
+    height: 200px;
+    background: url(img/con3-3.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#contents>.con4>div>p {
+    padding: 20px 0;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+#contents>.con4>div>p>span {
+    color: #171c61;
+    font-size: 20px;
+    font-family: 'Baloo', cursive;
+}
+
+#contents>.con4>div>p>a{
+    display: inline-block;
+    padding: 6px 20px;
+    color: #171c61;
+    border: 1px solid #171c61;
+    margin-top: 15px;
+}
+
+#contents>.con4>div>p>a:hover{          
+    background: #171c61;
+    color: #fff;
+}
+
+
+
+
+
+/*------------------------footer--------------------- */
+
+.footerWrap {
+    width: 100%;
+    padding: 30px 0px;
+    font-family: 'Jua', sans-serif;
+    border-top: 1.5px solid #171c61;
+}
+
+.footerWrap>#footer {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.footerWrap>#footer>.logo {
+    width: 100%;
+    text-align: center;
+}
+
+.footerWrap>#footer>.logo>img {
+    width: 15%;
+}
+
+.footerWrap>#footer>p {
+    text-align: center;
+    font-weight: bold;
+    color: #171c61;
+}

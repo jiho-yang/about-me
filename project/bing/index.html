@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빙그레</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poppins&display=swap" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/slick-theme.css" />
+    <script src="./js/slick.min.js"></script> -->
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="icon" href="./img/ico_favicon.ico">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="js/lib/slick.js"></script> -->
+    <script src="js/lib/slick.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header_go header_fixed">
+            <ul>
+                <li><a href="#">구매포털시스템<img src="./img/link_arrow02.png" alt="link_01"></a></li>
+                <li><a href="#">인재채용<img src="./img/link_arrow02.png" alt="link_02"></a></li>
+            </ul>
+        </div>
+        <div class="header_wrap header_fixed">
+            <a class="logo">
+                <img src="./img/logo-pc.png" alt="logo">
+            </a>
+            <ul class="menu">
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">제품소개</a></li>
+                <li><a href="#">지속가능경영</a></li>
+                <li><a href="#">투자정보</a></li>
+                <li><a href="#">뉴스룸</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+            <div class="side_menu">
+                <div class="lang">
+                    <select name="KR" id="lang">
+                        <option value="KR">KR</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </div>
+
+                <div class="all-btn">
+                    <input type="checkbox" id="hamburger" />
+                    <label for="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <div class="sidebar">
+                        <h2 style="text-align: center; position: relative; top: 75px;"><a href="#">로고</a></h2>
+                        <hr style="position: relative; top:100px; border: solid 1px black;">
+                        <ul class="nav_mobile">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                            <li><a href="#">메뉴3</a></li>
+                            <li><a href="#">메뉴4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg_logo2">
+            <img src="./img/sec01_logo_2.png" alt="logo2">
+        </div>
+
+        <div class="search_box">
+            <input type="search" placeholder="검색어를 입력해주세요" onfocus="this.placeholder=''"
+                onblur="this.placeholder='검색어를 입력해주세요'">
+            <button>SERACH</button>
+        </div>
+
+        <div class="hashtag_sec">
+            <ul>
+                <li><a href="#">#바나나맛우유</a></li>
+                <li><a href="#">#더단백</a></li>
+                <li><a href="#">#슈퍼콘</a></li>
+                <li><a href="#">#요플레</a></li>
+                <li><a href="#">#아카페라</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+
+    <div class="main_page">
+        <section class="sec02">
+            <div class="slide01">
+                <h2>행복한 빙그레의 맛!</h2>
+                <ul class="slick-slide">
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/6e5e4881-40ba-4150-ac86-6d61173da0ad.png" alt="con1">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>아이스크림</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/fd6acf22-becc-43e2-923e-c7300f2c8da7.png" alt="con2">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>우유/치즈</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/1dea8cd4-bdb2-4ac0-a42c-8cd60968aa36.png" alt="con3">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>발효유</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/8bdfd152-49d3-4430-b64b-9ecb43e9cb09.png" alt="con4">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>커피</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/99f5db34-3e58-4df7-b43a-e97714ca0287.png" alt="con5">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>주스</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/481f6075-a2a3-4070-85b0-3000a5817a10.png" alt="con6">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>음료</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/e9342f3c-4649-4e9a-b147-461282347b20.png" alt="con7">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>스낵/디저트</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/61bc3400-cd34-429d-bcbf-5471dcee79a0.png" alt="con8">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>건강지향</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/fbf974f7-e6c8-4df6-87a5-3154b5cd647c.png" alt="con9">
+                            </a>
+                            <a href="#" class="text_box">
+                                <span>수출제품</span>
+                                <span class="hover_btn">VIEW MORE</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="slide02">
+                <h2>BRAND SHOP</h2>
+                <ul class="slick-slide">
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo01.png" alt="con1">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo01.png" alt="con1">
+                                <p>빙그레 건강 tft의<br>단백질 전문 브랜드</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo02.png" alt="con2">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo02.png" alt="con2">
+                                <p>부담없는 캐주얼한 커피</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo03.png" alt="con3">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo03.png" alt="con3">
+                                <p>39년 전통의<br>대한민국 Heriatge</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo04.png" alt="con4">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo04.png" alt="con4">
+                                <p>대한민국을 대표하는<br>No.1 가공우유</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo05.png" alt="con5">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo05.png" alt="con5">
+                                <p>진한 맛의 감동<br>프리미엄 아이스크림</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo06.png" alt="con6">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo06.png" alt="con6">
+                                <p>남자를 위한 건강플랜<br>마노플랜</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="slide_box">
+                        <div>
+                            <a href="#">
+                                <img src="img/sec02_logo07.png" alt="con7">
+                            </a>
+                            <a href="#" class="text_box hover_btn pc_none">
+                                <img src="img/sec02_logo07.png" alt="con7">
+                                <p>맛과 건강의 완벽한 조화,<br>비바시티</p>
+                                <span>구입하기</span>
+                            </a>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+    <section class="desc_bottom">
+        <div class="sec3">
+            <h2>고객문의 및 불편사항</h2>
+            <div class="sec3_inner">
+                <div class="consult_box">
+                    <ul>
+                        <li>
+                            <a href="#" class="consult_flex">
+                                <h3>이메일 상담</h3>
+                                <p>빙그레에 궁금한 사항을 문의해 주세요.</p>
+                                <p>최대한 빠른 시일내에 친절하게 답변해드리겠습니다.</p>
+                                <p class="consult_last">상담하기</p>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="consult_flex">
+                                <h3>전화 상담</h3>
+                                <p class="consult_call">080.022.0056</p>
+                                <p>월~금(공휴일제외)&nbsp&nbsp<span>09:00~17:30</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="qna_title">
+                    <li>자주 묻는 질문에 내용이 없을 경우, 이메일 및 전화 상담 바랍니다.</li>
+                    <li><a href="#">더보기</a></li>
+                </ul>
+
+                <div class="qna_desc">
+
+                    <ul>
+                        <li>
+                            <a href="#">Q.아이스크림에는 왜 유통기한이 없나요?</a>
+                        </li>
+                        <li>
+                            <a href="#">Q.제품 유통기한 뒤에 있는 알파벳 기호는 무엇인가요?</a>
+                        </li>
+                        <li>
+                            <a href="#">Q.요플레 분리배출(라벨 제거) 방법 알려주세요.</a>
+                        </li>
+                        <li>
+                            <a href="#">Q.아이스크림, 음료 등 제품 공급(납품) 관련 문의드리고 싶어요</a>
+                        </li>
+                        <li>
+                            <a href="#">Q.빙그레 제품을 구입할 수 있는 온라인 몰이 따로 있나요?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec4">
+            <h2>빙그레 임직원 및 종사자 온라인제보</h2>
+            <div class="sec4_inner">
+                <div class="consult_box">
+                    <ul>
+                        <li>
+                            <a href="#" class="consult_flex">
+                                <p>빙그레 임직원의 부당한 요구 또는 업무처리,<br>인권고충,기타 부정행위 제보</p>
+                            </a>
+                            <a href="#">사이버 신고센터</a>
+                        </li>
+                        <li>
+                            <a href="#" class="consult_flex">
+                                <p>빙그레 종사자의 유해·위험요소 및 안전·보건에 관한 의견 제보</p>
+                            </a>
+                            <a href="#">안전신문고</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="clear_fix">
+        <div class="footer_inner">
+            <div class="footer01">
+                <img src="img/f_logo.png" alt="f_logo">
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+            </div>
+            <div class="footer02">
+                <p>회사명:빙그레</p>
+                <p>경기도 남양주시 다산동 4344-3 / 경기도 남양주시 다산순환로 45(다산동)</p>
+            </div>
+            <div class="footer03">
+                <p>ⓒ Binggrae all rights reserved.</p>
+                <ul>
+                    <li><a href="#"><img src="img/footer_sns04.png" alt="blog"></a></li>
+                    <li><a href="#"><img src="img/footer_sns03.png" alt="insta"></a></li>
+                    <li><a href="#"><img src="img/footer_sns02.png" alt="youtube"></a></li>
+                    <li><a href="#"><img src="img/footer_sns01.png" alt="tftmall"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- <script>
+        $(document).ready(function () {
+            $('.slick-slide').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+
+                autoplaySpeed: 2000,
+            });
+        });
+    </script> -->
+
+</body>
+
+</html>
