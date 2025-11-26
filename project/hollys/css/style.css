@@ -15,7 +15,6 @@ header {
 }
 
 .page-section {
-    /* min-height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,6 +27,14 @@ header {
     color: #fff;
     flex-direction: column;
 } */
+
+.page-container h2 {
+    font-size: 35px;
+}
+
+.page-container p {
+    font-size: 22px;
+}
 
 
 .main-slide img {
@@ -234,63 +241,90 @@ header {
 .about-mall {
     position: relative;
     max-width: 1400px;
-    margin: 80px auto;
+    margin: 60px auto 0;
     text-align: center;
 }
 
-/* 슬라이더(값만 바꿔서 전체 조정) */
 .center {
-    position: relative;
-    /* ← 화살표 절대배치 기준 */
     --card-w: 340px;
-    /* 카드(슬라이드) 고정 너비 */
     --gap: 12px;
-    /* 카드 좌우 간격 */
     --arrow: 50px;
-    /* 화살표 아이콘 크기(px) */
     margin-top: 50px;
 }
 
-/* 리스트 가장자리 보정(간격 만큼 음수 마진) */
 .center .slick-list {
+    height: 85vh;
     margin: 0 calc(var(--gap) * -1);
 }
 
-/* 카드 공통 */
 .center .slick-slide {
     padding: 0 var(--gap);
     height: 420px;
-    /* 필요 없으면 제거 가능 */
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     text-align: center;
     opacity: .6;
     transition: transform .3s ease, opacity .3s ease;
 }
 
-/* 카드 안의 이미지 */
 .center .slick-slide img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* 비율 유지하며 카드 박스 채움 */
     display: block;
     border-radius: 10px;
 }
 
-/* 가운데 활성화 카드 강조 */
 .center .slick-center {
     opacity: 1;
-    /* transform: scale(1.1); */
-    /* 살짝 확대 (원하면 조절/삭제) */
     z-index: 2;
 }
 
-/* 점(dot) 위치(쓰는 경우) */
 .slick-dots {
     bottom: -40px;
 }
+
+.center .mall-txt-box h3 {
+    font-size: 25px;
+}
+
+.center .mall-txt-box p.en-txt {
+    font-size: 15px;
+    font-weight: normal;
+    color: #888;
+    position: relative;
+    display: inline-block;
+}
+
+.center .mall-txt-box p.en-txt::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #a42228;
+    margin: 6px auto 10px;
+}
+
+.center .mall-txt-box p {
+    font-size: 15px;
+}
+
+.center .mall-txt-box {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+/* JS가 붙여줄 클래스 */
+.center .mall-txt-box.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
 
 /* ====== 커스텀 화살표 ====== */
 
@@ -298,7 +332,7 @@ header {
 .center .slick-prev,
 .center .slick-next {
     position: absolute;
-    top: 50%;
+    top: 25%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -353,11 +387,11 @@ header {
 /* ===================== */
 .about-fc {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     text-align: center;
-    /* margin: 100px auto; */
     position: relative;
     background: url("../img/fc-bg.jpg") no-repeat center;
+    background-attachment: fixed;
 }
 
 .about-fc::before {
@@ -377,12 +411,10 @@ header {
 }
 
 .about-fc .fc-txt h2 {
-    font-size: 35px;
     letter-spacing: 2px;
 }
 
 .about-fc .fc-txt p {
-    font-size: 20px;
     margin: 15px 0 30px;
 }
 
@@ -402,26 +434,51 @@ header {
 
 /* ===================== */
 .membership {
-    /* height: 80vh; */
-    text-align: center;
-    /* position: relative; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* 화면 세로 가운데 */
+}
+
+.member-inner {
     width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.membership .member-inner {
+/* .member-inner>h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+} */
+
+.member-inner>p {
+    margin-bottom: 60px;
+}
+
+/* ===== 좌/우 콘텐츠 영역 ===== */
+.member-con {
     display: flex;
-    justify-content: space-evenly;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%); */
-    padding: 150px 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    position: relative;
 }
 
-.membership .member-inner .mem-fir,
-.membership .member-inner .mem-sec {
-    width: 50%;
+/* 가운데 세로 라인 */
+.member-con::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 1px;
+    background-color: #ddd;
+}
+
+/* ===== 왼쪽 / 오른쪽 블럭 ===== */
+.mem-fir,
+.mem-sec {
+    flex: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -461,14 +518,31 @@ header {
 
 .event-wrap {
     width: 1400px;
+    height: 100vh;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
 }
 
+/* .event-wrap h2 {
+    margin-top: 120px;
+    margin-bottom: 12px;
+} */
+
+.event-wrap>p {
+    margin-bottom: 60px;
+}
+
+/* ✅ 이미지 3개 영역을 가운데로 */
 .event-wrap .event-item {
     display: flex;
     justify-content: space-evenly;
-    padding: 100px 0;
+    align-items: center;
+
+    flex: 1;
+    /* 남은 높이 차지 */
 }
 
 .event-wrap .event-item li {
