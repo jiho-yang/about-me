@@ -22,12 +22,6 @@ header {
     font-weight: 600;
 }
 
-/* header.page-section {
-    background: #b01030;
-    color: #fff;
-    flex-direction: column;
-} */
-
 .page-container h2 {
     font-size: 35px;
 }
@@ -36,13 +30,14 @@ header {
     font-size: 22px;
 }
 
-
 .main-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
+
+/* ===================== 헤더 / 메뉴 기본 ===================== */
 
 .menu-wrap {
     position: relative;
@@ -65,32 +60,8 @@ header {
     border-top: 1px solid #eee;
 }
 
-
 .menu-wrap:hover::after {
     display: block;
-}
-
-.menu-wrap:hover .sub-menu {
-    display: block;
-}
-
-.menu {
-    width: 50%;
-    display: flex;
-    align-items: center;
-}
-
-.menu>ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu>ul>li {
-    position: relative;
 }
 
 .menu-inner {
@@ -117,6 +88,19 @@ header {
     width: 50%;
     display: flex;
     align-items: center;
+}
+
+.menu>ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>ul>li {
+    position: relative;
 }
 
 .menu ul {
@@ -146,7 +130,7 @@ header {
     top: 100%;
     left: 0;
     padding: 50px 0px 20px;
-    background: transparent;
+    background: #fff;
     z-index: 2;
     font-size: 15px;
 }
@@ -161,6 +145,8 @@ header {
 .menu .sub-menu li a:hover {
     color: #a42228;
 }
+
+/* PC에서만 hover 드롭다운 */
 
 .menu:hover .sub-menu {
     display: block;
@@ -199,6 +185,78 @@ header {
     height: 20px;
 }
 
+/* ===================== 햄버거 버튼 (공통) ===================== */
+
+.btn-hamburger {
+    display: none;
+    /* 모바일에서만 보이게 할 거라 기본은 숨김 */
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    /* 패널/딤 위에 떠 있도록 고정 */
+    top: 30px;
+    right: 16px;
+    z-index: 1002;
+    /* dim(1000), 패널(1001)보다 위 */
+}
+
+.btn-hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .2s ease, background .2s;
+}
+
+/* 햄버거 상태 */
+.btn-hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.btn-hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+/* X 상태 */
+.btn-hamburger.is-open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.btn-hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-hamburger.is-open span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: auto;
+    top: 50%;
+}
+
+/* 필요하면 X일 때 색 바꾸기 */
+/*
+body.nav-open .btn-hamburger span {
+    background: #fff;
+}
+*/
+
+/* 딤 기본 */
+
+.nav-dim {
+    display: none;
+}
+
+/* ===================== 메인 슬라이더 ===================== */
 
 .single-item {
     position: relative;
@@ -213,7 +271,7 @@ header {
     display: flex !important;
     justify-content: center;
     gap: 15px;
-    z-index: 10;
+    z-index: 9;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -235,9 +293,8 @@ header {
     background-color: #a42228;
 }
 
-/* ===================== */
+/* ===================== Mall 슬라이드 ===================== */
 
-/* 래퍼 */
 .about-mall {
     position: relative;
     max-width: 1400px;
@@ -260,9 +317,6 @@ header {
 .center .slick-slide {
     padding: 0 var(--gap);
     height: 420px;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     text-align: center;
     opacity: .6;
     transition: transform .3s ease, opacity .3s ease;
@@ -318,17 +372,14 @@ header {
     transition: opacity .3s ease, transform .3s ease;
 }
 
-/* JS가 붙여줄 클래스 */
 .center .mall-txt-box.is-active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
 
+/* Mall 커스텀 화살표 */
 
-/* ====== 커스텀 화살표 ====== */
-
-/* 버튼 베이스 */
 .center .slick-prev,
 .center .slick-next {
     position: absolute;
@@ -336,7 +387,7 @@ header {
     transform: translateY(-50%);
     background: none;
     border: none;
-    z-index: 10;
+    z-index: 9;
     cursor: pointer;
 }
 
@@ -346,7 +397,6 @@ header {
     color: #a42228;
 }
 
-/* 중앙 카드 기준 '고정' 위치 */
 .center .slick-prev {
     left: calc(50% - (var(--card-w) / 2) - var(--gap) - var(--arrow));
 }
@@ -355,7 +405,6 @@ header {
     left: calc(50% + (var(--card-w) / 2) + var(--gap));
 }
 
-/* 아이콘 교체(기본/호버) */
 .slick-prev i.hover,
 .slick-next i.hover {
     display: none;
@@ -375,16 +424,12 @@ header {
     transition: none !important;
 }
 
-/* JS에서 .is-wrap 클래스가 붙은 동안 전환 OFF */
 .center.is-wrap .slick-slide {
     transition: none !important;
 }
 
-/* .center .slick-slide, .center .slick-center{ transform:none!important; transition:none!important; } */
+/* ===================== FRANCHISE 섹션 ===================== */
 
-
-
-/* ===================== */
 .about-fc {
     width: 100%;
     height: 100vh;
@@ -431,13 +476,12 @@ header {
     background-color: #000;
 }
 
+/* ===================== MEMBERSHIP 섹션 ===================== */
 
-/* ===================== */
 .membership {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    /* 화면 세로 가운데 */
 }
 
 .member-inner {
@@ -446,16 +490,10 @@ header {
     text-align: center;
 }
 
-/* .member-inner>h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
-} */
-
 .member-inner>p {
     margin-bottom: 60px;
 }
 
-/* ===== 좌/우 콘텐츠 영역 ===== */
 .member-con {
     display: flex;
     justify-content: space-between;
@@ -464,7 +502,6 @@ header {
     position: relative;
 }
 
-/* 가운데 세로 라인 */
 .member-con::before {
     content: "";
     position: absolute;
@@ -475,7 +512,6 @@ header {
     background-color: #ddd;
 }
 
-/* ===== 왼쪽 / 오른쪽 블럭 ===== */
 .mem-fir,
 .mem-sec {
     flex: 1;
@@ -504,7 +540,6 @@ header {
     transform: translateX(17px);
 }
 
-
 .membership .member-inner .mem-fir .mem-img,
 .membership .member-inner .mem-sec .mem-img {
     width: 150px;
@@ -514,7 +549,7 @@ header {
     width: 100%;
 }
 
-
+/* ===================== EVENT 섹션 ===================== */
 
 .event-wrap {
     width: 1400px;
@@ -526,30 +561,21 @@ header {
     padding: 50px 0;
 }
 
-/* .event-wrap h2 {
-    margin-top: 120px;
-    margin-bottom: 12px;
-} */
-
 .event-wrap>p {
     margin-bottom: 60px;
 }
 
-/* ✅ 이미지 3개 영역을 가운데로 */
 .event-wrap .event-item {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
     flex: 1;
-    /* 남은 높이 차지 */
 }
 
 .event-wrap .event-item li {
     width: 28%;
     height: auto;
 }
-
 
 .event-wrap .event-item li a {
     display: inline-block;
@@ -564,8 +590,7 @@ header {
     height: 100%;
 }
 
-
-
+/* ===================== FOOTER ===================== */
 
 footer {
     width: 100%;
@@ -580,7 +605,6 @@ footer .footer-inner {
     font-size: 14px;
 }
 
-
 footer .footer-inner .footer-policy {
     width: 50%;
     display: flex;
@@ -594,11 +618,324 @@ footer .footer-inner .footer-policy li::after {
     color: #fff;
 }
 
-
 footer .footer-inner .footer-policy li:last-child::after {
     content: "";
 }
 
 footer .footer-inner p {
     opacity: .5;
+}
+
+/* =====================================
+   1200px 이하
+   ===================================== */
+@media (max-width: 1200px) {
+
+    .menu-inner,
+    .member-inner,
+    .event-wrap,
+    footer .footer-inner {
+        width: 100%;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+
+    .page-container h2 {
+        font-size: 30px;
+    }
+
+    .page-container p {
+        font-size: 18px;
+    }
+
+    .menu ul {
+        gap: 12px;
+        font-size: 15px;
+    }
+
+    .center {
+        --card-w: 280px;
+    }
+
+    .member-con {
+        gap: 40px;
+    }
+
+    .menu-wrap:hover::after {
+        display: none;
+    }
+
+    .menu-wrap {
+        padding: 0px 0;
+    }
+
+    .menu .sub-menu li a{
+        text-align: left;
+    }
+}
+
+/* =====================================
+   768px 이하 - 태블릿 / 모바일
+   ===================================== */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        height: auto;
+        overflow: auto;
+    }
+
+    .page-section {
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .header-inner {
+        height: auto;
+    }
+
+    .header-bg {
+        height: auto;
+    }
+
+    .menu-inner {
+        padding: 12px 16px;
+    }
+
+    .logo-img {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* 햄버거 보이기, 우측 메뉴 숨기기 */
+    .btn-hamburger {
+        display: block;
+    }
+
+    .right-menu {
+        display: none;
+    }
+
+    /* 메뉴를 오른쪽 슬라이드 패널로 변경 */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: #f5f5f5;
+        padding: 80px 24px 24px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: transform .3s ease;
+        z-index: 1001;
+        display: block;
+    }
+
+    body.nav-open .menu {
+        transform: translateX(0);
+    }
+
+    /* 딤 */
+    body.nav-open .nav-dim {
+        display: block;
+        position: fixed;
+        inset: 0;
+        /* background: rgba(0, 0, 0, .4); */
+        z-index: 2;
+    }
+
+    /* 메뉴 리스트 세로 정렬 */
+    .menu>ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .menu>ul>li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .menu>ul>li>a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    /* 서브메뉴: 아코디언 + 스르륵 */
+    .menu .sub-menu {
+        position: static;
+        margin-top: 4px;
+        padding: 0 0 0 12px;
+        background: transparent;
+
+        /* PC의 display:none 덮어쓰기 */
+        display: block;
+
+        /* 접힌 상태 */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+
+        transition:
+            max-height 0.25s ease,
+            opacity 0.2s ease,
+            padding-top 0.25s ease;
+    }
+
+    .menu>ul>li.is-open .sub-menu {
+        max-height: 300px;
+        /* 필요하면 400~500으로 조정 */
+        opacity: 1;
+        padding-top: 6px;
+    }
+
+    /* PC용 hover 비활성화 */
+    .menu-wrap:hover .sub-menu {
+        /* display: none; */
+    }
+
+    /* Mall 슬라이드 영역 */
+    .about-mall {
+        max-width: 100%;
+        padding: 40px 16px 60px;
+        box-sizing: border-box;
+    }
+
+    .center .slick-list {
+        height: auto;
+    }
+
+    .center .slick-slide {
+        height: auto;
+        opacity: 1;
+    }
+
+    .main-slide img {
+        height: 60vh;
+    }
+
+    /* FRANCHISE */
+    .about-fc {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .about-fc .fc-txt p {
+        font-size: 16px;
+        padding: 0 16px;
+    }
+
+    .about-fc .fc-txt a {
+        font-size: 16px;
+        padding: 8px 24px;
+    }
+
+    /* MEMBERSHIP 2단 → 1단 */
+    .membership {
+        padding: 60px 0;
+        align-items: flex-start;
+    }
+
+    .member-inner {
+        text-align: center;
+    }
+
+    .member-con {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .member-con::before {
+        display: none;
+    }
+
+    .mem-fir,
+    .mem-sec {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mem-text {
+        text-align: center;
+    }
+
+    .membership .member-inner .mem-fir .mem-img,
+    .membership .member-inner .mem-sec .mem-img {
+        width: 200px;
+    }
+
+    /* EVENT 3열 → 1열 */
+    .event-wrap {
+        width: 100%;
+        height: auto;
+        padding: 40px 16px 60px;
+        box-sizing: border-box;
+    }
+
+    .event-wrap .event-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .event-wrap .event-item li {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 60px 0;
+    }
+
+    footer .footer-inner .footer-policy {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    footer .footer-inner p {
+        font-size: 12px;
+    }
+}
+
+/* =====================================
+   360px 이하
+   ===================================== */
+@media (max-width: 360px) {
+    .menu-inner {
+        padding: 10px 10px;
+    }
+
+    .menu ul {
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .right-menu ul li:first-child {
+        display: none;
+    }
+
+    .page-container h2 {
+        font-size: 26px;
+    }
+
+    .page-container p {
+        font-size: 16px;
+    }
+
+    .center .mall-txt-box h3 {
+        font-size: 20px;
+    }
+
+    .center .mall-txt-box p {
+        font-size: 13px;
+    }
+
+    footer .footer-inner {
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
 }
