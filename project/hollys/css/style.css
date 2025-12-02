@@ -107,12 +107,14 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
+    gap: 0px;
 }
 
 .menu ul li {
@@ -120,8 +122,17 @@ header {
     width: 100%;
 }
 
+.menu ul li a {
+    display: inline-block;
+    /* padding: 15px 20px 18px; */
+}
+
 .menu ul li a:hover {
     color: #a42228;
+}
+
+.menu > ul > li > a:focus {
+    outline: none;
 }
 
 .menu .sub-menu {
@@ -253,6 +264,10 @@ body.nav-open .btn-hamburger span {
 /* 딤 기본 */
 
 .nav-dim {
+    display: none;
+}
+
+.mobile-menu-header {
     display: none;
 }
 
@@ -612,11 +627,11 @@ footer .footer-inner .footer-policy {
     margin-bottom: 20px;
 }
 
-footer .footer-inner .footer-policy li::after {
+/* footer .footer-inner .footer-policy li::after {
     content: "|";
     margin: 0 8px;
     color: #fff;
-}
+} */
 
 footer .footer-inner .footer-policy li:last-child::after {
     content: "";
@@ -631,6 +646,7 @@ footer .footer-inner p {
    ===================================== */
 @media (max-width: 1200px) {
 
+    /* 공통 레이아웃 */
     .menu-inner,
     .member-inner,
     .event-wrap,
@@ -640,6 +656,7 @@ footer .footer-inner p {
         box-sizing: border-box;
     }
 
+    /* 타이포 */
     .page-container h2 {
         font-size: 30px;
     }
@@ -648,30 +665,52 @@ footer .footer-inner p {
         font-size: 18px;
     }
 
+    /* 메뉴 */
     .menu ul {
         gap: 12px;
         font-size: 15px;
     }
 
-    .center {
-        --card-w: 280px;
-    }
-
-    .member-con {
-        gap: 40px;
+    .menu-wrap {
+        padding: 0;
     }
 
     .menu-wrap:hover::after {
         display: none;
     }
 
-    .menu-wrap {
-        padding: 0px 0;
-    }
-
-    .menu .sub-menu li a{
+    .menu .sub-menu li a {
         text-align: left;
     }
+
+    /* Mall 슬라이드 */
+    .center {
+        --card-w: 280px;
+    }
+
+    /* 멤버십 */
+    .member-con {
+        gap: 40px;
+    }
+
+    /* ✅ footer 정책 영역 (1200px 깨짐 해결 핵심) */
+    footer .footer-inner .footer-policy {
+        width: 100%;
+        /* 기존 50% 덮어쓰기 */
+        display: flex;
+        flex-wrap: wrap;
+        /* 줄바꿈 허용 */
+        justify-content: flex-start;
+        gap: 8px 16px;
+        /* 행 / 열 간격 */
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    /* ✅ 1200px 이하에서는 구분선 제거 */
+    /* footer .footer-inner .footer-policy li::after {
+        content: none;
+    } */
 }
 
 /* =====================================
@@ -700,6 +739,7 @@ footer .footer-inner p {
 
     .menu-inner {
         padding: 12px 16px;
+        box-sizing: border-box;
     }
 
     .logo-img {
@@ -716,7 +756,7 @@ footer .footer-inner p {
         display: none;
     }
 
-    /* 메뉴를 오른쪽 슬라이드 패널로 변경 */
+    /* 메뉴를 전체화면 슬라이드 패널로 변경 */
     .menu {
         position: fixed;
         top: 0;
@@ -724,7 +764,8 @@ footer .footer-inner p {
         width: 100%;
         height: 100vh;
         background: #f5f5f5;
-        padding: 80px 24px 24px;
+        padding: 100px 24px 24px;
+        /* 상단 로고 높이만큼 여유 */
         box-sizing: border-box;
         transform: translateX(100%);
         transition: transform .3s ease;
@@ -734,6 +775,24 @@ footer .footer-inner p {
 
     body.nav-open .menu {
         transform: translateX(0);
+    }
+
+    /* 모바일 메뉴 상단 로고 영역 */
+    .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    .mobile-logo img {
+        height: 50px;
+        display: block;
     }
 
     /* 딤 */
@@ -747,6 +806,7 @@ footer .footer-inner p {
 
     /* 메뉴 리스트 세로 정렬 */
     .menu>ul {
+        margin-top: 8px;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
@@ -762,7 +822,7 @@ footer .footer-inner p {
         padding: 8px 0;
     }
 
-    /* 서브메뉴: 아코디언 + 스르륵 */
+    /* 서브메뉴: 아코디언 */
     .menu .sub-menu {
         position: static;
         margin-top: 4px;
@@ -790,9 +850,18 @@ footer .footer-inner p {
         padding-top: 6px;
     }
 
-    /* PC용 hover 비활성화 */
-    .menu-wrap:hover .sub-menu {
-        /* display: none; */
+    /* 메인 비주얼 슬라이드 dots 살짝 축소 */
+    .single-item .slick-dots {
+        gap: 10px;
+    }
+
+    .single-item .slick-dots li button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .main-slide img {
+        height: 60vh;
     }
 
     /* Mall 슬라이드 영역 */
@@ -800,6 +869,7 @@ footer .footer-inner p {
         max-width: 100%;
         padding: 40px 16px 60px;
         box-sizing: border-box;
+        margin: 0;
     }
 
     .center .slick-list {
@@ -811,8 +881,42 @@ footer .footer-inner p {
         opacity: 1;
     }
 
-    .main-slide img {
-        height: 60vh;
+    /* Mall dots : 하단 중앙, 가로, 동그라미만 */
+    .center .slick-dots {
+        position: absolute;
+        /* bottom: 16px; */
+        /* 빨간 박스 근처 위치 */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex !important;
+        flex-direction: row;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .center .slick-dots::before {
+        content: none;
+        /* 선 제거 */
+    }
+
+    .center .slick-dots li button {
+        font-size: 0;
+        /* 숫자 숨기기 */
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #e1e1e0;
+        /* 비활성 점 색 */
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .center .slick-dots li.slick-active button {
+        background: #a42228;
+        /* 활성 점 빨강 */
     }
 
     /* FRANCHISE */
@@ -821,30 +925,37 @@ footer .footer-inner p {
         background-size: cover;
     }
 
+    .about-fc .fc-txt {
+        width: 100%;
+    }
+
     .about-fc .fc-txt p {
-        font-size: 16px;
-        padding: 0 16px;
+        font-size: 12px;
     }
 
     .about-fc .fc-txt a {
-        font-size: 16px;
-        padding: 8px 24px;
+        font-size: 12px;
+        padding: 6px 20px;
     }
 
-    /* MEMBERSHIP 2단 → 1단 */
+    /* MEMBERSHIP 2단 → 1단 : 카드 레이아웃 */
     .membership {
-        padding: 60px 0;
+        padding: 40px 0 60px;
         align-items: flex-start;
     }
 
     .member-inner {
+        width: 100%;
+        margin: 0 auto;
         text-align: center;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
 
     .member-con {
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        align-items: stretch;
+        gap: 20px;
     }
 
     .member-con::before {
@@ -853,51 +964,115 @@ footer .footer-inner p {
 
     .mem-fir,
     .mem-sec {
+        flex: none;
+        width: 100%;
         flex-direction: column;
-        gap: 16px;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 16px;
+        box-sizing: border-box;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
     }
 
     .mem-text {
         text-align: center;
     }
 
-    .membership .member-inner .mem-fir .mem-img,
-    .membership .member-inner .mem-sec .mem-img {
-        width: 200px;
+    .mem-text h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
     }
 
+    .mem-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .membership .member-inner div>.mem-text a {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .membership .member-inner>div .mem-img img {
+        display: none;
+    }
+
+    /* .membership .member-inner .mem-fir .mem-img,
+    .membership .member-inner .mem-sec .mem-img {
+        width: 220px;
+        margin: 0 auto 8px;
+    } */
+
     /* EVENT 3열 → 1열 */
+    /* EVENT 3열 → 1열 (카드 스타일) */
     .event-wrap {
         width: 100%;
         height: auto;
         padding: 40px 16px 60px;
         box-sizing: border-box;
+        text-align: center;
     }
 
     .event-wrap .event-item {
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
+        /* ✅ 가운데 정렬 */
         gap: 20px;
     }
 
     .event-wrap .event-item li {
+        width: 80%;
+        /* ✅ 너무 크지 않게 살짝 줄이기 */
+        max-width: 360px;
+        /* 최대 폭 제한 */
+    }
+
+    .event-wrap .event-item li a {
+        display: block;
+        border-radius: 16px;
+        /* 모서리 둥글게 */
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+        /* 카드 느낌 */
+    }
+
+    .event-wrap .event-item li a img {
         width: 100%;
+        height: auto;
+        display: block;
     }
 
     /* FOOTER */
     footer {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     footer .footer-inner .footer-policy {
         width: 100%;
-        flex-wrap: wrap;
-        gap: 8px;
+        display: grid;
+        /* ✅ flex 버리고 grid */
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 12px;
+        column-gap: 12px;
+        margin-bottom: 20px;
         font-size: 12px;
     }
 
+    footer .footer-inner .footer-policy li {
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    /* ✅ | 구분선 제거 */
+    footer .footer-inner .footer-policy li::after {
+        content: none;
+    }
+
     footer .footer-inner p {
-        font-size: 12px;
+        font-size: 6px;
     }
 }
 
@@ -910,8 +1085,8 @@ footer .footer-inner p {
     }
 
     .menu ul {
-        font-size: 12px;
-        gap: 4px;
+        /* font-size: 12px; */
+        gap: 0px;
     }
 
     .right-menu ul li:first-child {
@@ -919,19 +1094,23 @@ footer .footer-inner p {
     }
 
     .page-container h2 {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .page-container p {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .center .mall-txt-box h3 {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .center .mall-txt-box p.en-txt {
+        font-size: 12px;
     }
 
     .center .mall-txt-box p {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     footer .footer-inner {
