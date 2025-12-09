@@ -487,7 +487,7 @@ footer div.contact_wrap>p {
 }
 
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
 
   /* main */
   main article .main_text p span {
@@ -574,18 +574,7 @@ footer div.contact_wrap>p {
 }
 
 
-@media (max-width: 480px) {
-
-  /* header */
-  /* header {
-    width: 81%;
-  }
-
-  header div {
-    width: 100%;
-  } */
-
-  /* //header */
+@media(max-width: 480px) {
 
   /* main */
   main article .main_text p span {
@@ -677,4 +666,127 @@ footer div.contact_wrap>p {
 
   /* //footer */
 
+}
+
+@media(max-width: 360px) {
+
+  /* header */
+  /* header {
+    width: 81%;
+  }
+
+  header div {
+    width: 100%;
+  } */
+
+  header a {
+    font-size: 20px;
+  }
+
+  header a:last-child {
+    font-size: 16px;
+  }
+
+  /* //header */
+
+  /* main */
+  main article .main_text p span {
+    font-size: 20px;
+  }
+
+  /* //main */
+
+
+  /* info */
+  section.info_wrap .info {
+    gap: 10px;
+  }
+
+  section.info_wrap .info .text_wrap {
+    font-size: 11px;
+  }
+
+  .info_wrap .text_wrap p a {
+    font-size: 11px;
+  }
+
+  /* //info */
+
+
+
+  /* work */
+
+  section.work_exp .work h2 {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  section.work_exp .work ul {
+    margin-bottom: 50px;
+  }
+
+  section.work_exp .work ul li a {
+    height: 75px;
+  }
+
+  section.work_exp .work ul li a span {
+    font-size: 13px;
+  }
+
+  /* //work */
+
+
+
+  /* mypopo */
+
+  section.popo_exp .popo h2 {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  section.popo_exp .popo ul {
+    margin-bottom: 50px;
+  }
+
+  section.popo_exp .popo ul li a {
+    height: 75px;
+  }
+
+  section.popo_exp .popo ul li a span {
+    font-size: 13px;
+  }
+
+  /* //mypopo */
+
+
+  /* footer */
+
+  footer div.contact_wrap h2 {
+    font-size: 25px;
+    padding-bottom: 30px;
+  }
+
+  footer div.contact_wrap ul {
+    gap: 0px;
+  }
+
+  footer div.contact_wrap ul li span {
+    font-size: 1.5rem;
+  }
+
+  footer div.contact_wrap ul li p {
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+
+  footer div.contact_wrap ul li img {
+    display: none;
+  }
+
+  footer div.contact_wrap>p {
+    font-size: 10px;
+    padding-bottom: 0px;
+  }
+
+  /* //footer */
 }
