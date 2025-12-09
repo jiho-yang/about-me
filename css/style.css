@@ -670,15 +670,6 @@ footer div.contact_wrap>p {
 
 @media(max-width: 360px) {
 
-  /* header */
-  /* header {
-    width: 81%;
-  }
-
-  header div {
-    width: 100%;
-  } */
-
   header a {
     font-size: 20px;
   }
@@ -691,7 +682,7 @@ footer div.contact_wrap>p {
 
   /* main */
   main article .main_text p span {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   /* //main */
