@@ -131,7 +131,7 @@ header {
     color: #a42228;
 }
 
-.menu > ul > li > a:focus {
+.menu>ul>li>a:focus {
     outline: none;
 }
 
@@ -157,9 +157,7 @@ header {
     color: #a42228;
 }
 
-/* PC에서만 hover 드롭다운 */
-
-.menu:hover .sub-menu {
+.menu-wrap:hover .sub-menu {
     display: block;
 }
 
