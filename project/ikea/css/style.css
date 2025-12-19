@@ -1,4 +1,4 @@
-.top-banner{
+.top-banner {
     width: 100%;
     text-align: center;
     padding: 10px 0;
@@ -6,68 +6,270 @@
     color: #fff;
 }
 
-.header{
+.header {
     width: 1400px;
     margin: 0 auto;
 }
 
-.header .header-inner{
+.header .header-inner {
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header .header-inner .icons{
+.header .header-inner div {
+    width: 33.3333%;
+}
+
+.header .header-inner .icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 25px;
     font-size: 14px;
 }
 
-.header .header-inner .icons a{
+.header .header-inner .icons a {
     color: #555;
 }
 
-.header .header-inner .icons a:hover{
+.header .header-inner .icons a:hover {
     color: #000;
 }
 
 
-.header .header-inner .icons a i{
+.header .header-inner .icons a i {
     font-size: 20px;
 }
 
-.header .header-inner .icons a:first-child i{
+.header .header-inner .icons a:first-child i {
     margin-right: 10px;
 }
 
-
-/* .slick-prev,
-.slick-next {
-  display: none !important;
+.header .header-inner .menu-wrap {
+    width: 60%;
 }
 
-.slick-slide{
+.header .header-inner .menu-wrap ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    font-size: 14px;
+}
+
+
+/* slide */
+section .single-item .slide a {
+    display: block;
     text-align: center;
-    font-size: 12px;
 }
 
-.slick-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;
+section .single-item .slide a img {
+    display: block;
+    width: 1400px;
+    margin: 0 auto;
+    border-radius: 35px;
 }
 
-.slick-slide {
-  margin: 0 12px;
+/* 버튼 위치 기준 */
+section .single-item {
+    position: relative;
 }
 
-.slick-list {
-  margin: 0 -12px;
-} */
+/* prev / next 공통 */
+section .single-item .slick-prev,
+section .single-item .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* 왼쪽 / 오른쪽 위치 */
+section .single-item .slick-prev {
+    left: 7%;
+}
+
+section .single-item .slick-next {
+    right: 7%;
+}
+
+/* slick 기본 텍스트 제거 */
+.single-item .slick-prev:before,
+.single-item .slick-next:before {
+    display: none;
+}
+
+.single-item .slick-prev,
+.single-item .slick-next {
+    font-size: 0;
+    /* Previous / Next 텍스트 제거 */
+}
+
+/* 화살표 공통 (::after) */
+.single-item .slick-prev::after,
+.single-item .slick-next::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    border-top: 2px solid #111;
+    border-right: 2px solid #111;
+
+    transform-origin: center;
+}
+
+/* ← */
+.single-item .slick-prev::after {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+/* → */
+.single-item .slick-next::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* hover 효과 (선택) */
+.single-item .slick-prev:hover,
+.single-item .slick-next:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+/* dots: 이미지 안쪽 하단 + 오른쪽 정렬 */
+.single-item .slick-dots {
+    position: absolute;
+    right: 6%;
+    bottom: 6%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    z-index: 20;
+}
+
+/* 세로 -> 가로 나열 */
+.single-item .slick-dots li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* slick 기본 점 제거 */
+.single-item .slick-dots li button:before {
+    display: none;
+}
+
+/* 숫자 버튼 "박스" 제거 + 텍스트처럼 */
+.single-item .slick-dots li button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    /* 이미지 위라면 흰색 계열 추천 */
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* 활성 숫자 강조 */
+.single-item .slick-dots li.slick-active button {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* 숫자 사이에 / 넣기 (마지막 제외) */
+.single-item .slick-dots li:not(:last-child)::after {
+    content: " / ";
+    display: inline-block;
+    margin: 0 6px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+.category-wrap {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.category-list {
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-list li {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ✅ 한 카드 */
+.category-list li a {
+    display: flex;
+    /* 핵심: 가로 배치 */
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: #f3f3f3;
+
+    text-decoration: none;
+    color: #111;
+}
+
+/* ✅ 썸네일 영역은 고정 */
+.category-list .thumb {
+    flex: 0 0 64px;
+    /* 고정 너비 */
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: block;
+    background: #fff;
+}
+
+.category-list .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ✅ 텍스트는 오른쪽 */
+.category-list .label {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.category-list .arrow {
+    margin-left: 4px;
+    font-weight: 700;
+    opacity: 0.7;
+}
 
 
 
