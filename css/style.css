@@ -21,7 +21,7 @@ header {
 /* header:hover{background: #92a1c3;} */
 header div {
   background: transparent;
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -193,7 +193,7 @@ section.work_exp {
 }
 
 section.work_exp .work {
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
 }
 
@@ -245,7 +245,7 @@ section.popo_exp {
 }
 
 section.popo_exp .popo {
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
 }
 
@@ -301,7 +301,7 @@ footer {
 }
 
 footer div.contact_wrap {
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
 }
 
