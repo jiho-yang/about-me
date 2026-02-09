@@ -83,12 +83,10 @@ section .single-item .slick-next {
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-
     width: 65px;
     height: 65px;
     border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.7);
+    background: none;
     border: none;
     padding: 0;
     cursor: pointer;
