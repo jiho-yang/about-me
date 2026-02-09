@@ -21,7 +21,7 @@ header {
 /* header:hover{background: #92a1c3;} */
 header div {
   background: transparent;
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -59,9 +59,10 @@ main {
 }
 
 main article {
-  width: 1200px;
-  height: 100%;
+  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
+  height: 100%;
   position: relative;
 }
 
@@ -193,7 +194,7 @@ section.work_exp {
 }
 
 section.work_exp .work {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -230,6 +231,7 @@ section.work_exp .work ul li a img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 /* //work */
