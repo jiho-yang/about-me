@@ -143,8 +143,8 @@ section .single-item .slick-next {
 
 .single-item .slick-dots {
     position: absolute;
-    right: 6%;
-    bottom: 6%;
+    right: 15%;
+    bottom: 5%;
     width: auto;
     margin: 0;
     padding: 0;
