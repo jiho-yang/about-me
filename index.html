@@ -3,180 +3,415 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyo — Portfolio</title>
+    <meta name="description" content="양지호의 웹퍼블리싱 포트폴리오. 시맨틱 마크업과 인터랙션, AI 협업 워크플로우">
     <meta name="robots" content="noindex, nofollow">
-    <title>양지호 | 웹 포트폴리오</title>
-    
-    <link rel="shortcut" href="img/favvvi.ico" type="image/x-icon">
-    <link rel="icon" href="img/favvvi.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/favvvi.ico">
-
-    <!-- css -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Poetsen+One&family=Rubik+Scribble&display=swap" rel="stylesheet">
-    <!-- script -->
-    <script src="js/lib/jquery-3.7.1.min.js"></script>
-    <script async src="js/index.js"></script>
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHRleHQgeD0iMzIiIHk9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSUJNIFBsZXggTW9ubywgTWVubG8sIENvbnNvbGFzLCBtb25vc3BhY2UiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iNDIiIHRleHRMZW5ndGg9IjU4IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiIGZpbGw9IiNlMmEzM2QiPiZsdDtKJmd0OzwvdGV4dD48L3N2Zz4K">
 </head>
 
 <body>
 
+    <div id="scrollProgress"></div>
+    <div class="grain"></div>
+    <div class="vignette"></div>
+    <div id="inspectorTag" class="mono"></div>
 
-    <header>
-        <div>
-            <a href="index.html">JYO's PORTFORIO</a>
-            <a href="https://accessible-waiter-71d.notion.site/Publisher-f2e14a8423fc4725b985ca457f101f1a">JIHO</a>
-        </div>
+    <header class="nav" id="siteNav">
+        <a href="#top" class="logo">JYO<small>YANG JI HO</small></a>
+        <nav class="links" id="navLinks">
+            <a href="#about">about</a>
+            <a href="#work">work</a>
+            <a href="#lab">lab</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <main>
-        <article>
-            <div class="main_text">
-                <p>
-                    <span>J</span>
-                    <span>Y</span>
-                    <span>O</span>
-                    <span>'</span>
-                    <span>s&nbsp;</span>
-                    <span>P</span>
-                    <span>O</span>
-                    <span>R</span>
-                    <span>T</span>
-                    <span>F</span>
-                    <span>O</span>
-                    <span>R</span>
-                    <span>I</span>
-                    <span>O</span>
-                </p>
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero" style="border-bottom:1px solid var(--line);">
+            <div class="aurora" id="auroraLayer">
+                <span class="aurora-blob a"></span>
+                <span class="aurora-blob b"></span>
+                <span class="aurora-blob c"></span>
+                <span class="aurora-blob d"></span>
+                <span class="aurora-blob e"></span>
             </div>
-        </article>
+            <div class="intro-cards" id="introCards">
+                <span class="icard mono"
+                    style="--sx:-420px; --sy:-260px; --srot:-18deg; --tx:-86px; --ty:-34px; --trot:-7deg;">&lt;header&gt;</span>
+                <span class="icard mono"
+                    style="--sx:360px; --sy:-300px; --srot:14deg; --tx:70px; --ty:-50px; --trot:5deg;">&lt;section/&gt;</span>
+                <span class="icard mono"
+                    style="--sx:-380px; --sy:220px; --srot:10deg; --tx:-64px; --ty:26px; --trot:-4deg;">&lt;img
+                    alt=""&gt;</span>
+                <span class="icard mono"
+                    style="--sx:400px; --sy:260px; --srot:-12deg; --tx:78px; --ty:38px; --trot:6deg;">&lt;button/&gt;</span>
+                <span class="icard mono"
+                    style="--sx:0px; --sy:-340px; --srot:6deg; --tx:0px; --ty:-64px; --trot:-2deg;">&lt;div
+                    class="app"&gt;</span>
+                <span class="icard mono"
+                    style="--sx:0px; --sy:320px; --srot:-6deg; --tx:0px; --ty:52px; --trot:3deg;">&lt;footer/&gt;</span>
+            </div>
+            <div class="wrap">
+                <div class="hero-text" id="heroText">
+                    <span class="eyebrow mono">&lt;portfolio role="web-publisher" name="jyo"&gt;<span class="blink">_</span></span>
+                    <h1 class="headline">FROM CONCEPT<br><span class="line2">TO CODE.</span></h1>
+                    <p class="hero-sub">디자인의 의도를 한 줄의 손실 없이 브라우저 위로 옮기는 웹퍼블리셔. <br>시맨틱 마크업, 인터랙션, 그리고 AI와의 협업까지.
+                    </p>
+                    <div class="hero-meta">
+                        <span>Web Publisher</span>
+                        <span>Based in Korea</span>
+                        <span>Open to work</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-cue">
+                <div class="bar"></div><span>SCROLL</span>
+            </div>
+            <span class="closetag">&lt;/portfolio&gt;</span>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="about"&gt;</span>
+                        <h2 class="section-title">About</h2>
+                    </div>
+                    <p class="section-desc">아이디어가 화면이 되기까지의 모든 과정을 즐깁니다.</p>
+                </div>
+                <div class="about-grid reveal">
+                    <!-- <div class="avatar">
+                        <img src="./img/me.png" alt="emoji">
+                    </div> -->
+                    <div class="about-bio">
+                        <p>디자인 시안을 정확하고 의미 있는 구조로 변환하는 웹퍼블리셔입니다. <br> 시맨틱한 HTML과 정교한 CSS, 그리고 디테일한 JS 인터랙션으로 의도된 사용자 경험을 코드 위에 그대로 구현합니다.</p>
+                        <p>최근에는 AI를 협업 파트너로 적극 활용해 더 빠른 속도로, 더 정교한 결과물을 만들어내는 작업 방식을 실험하고 있습니다.
+                        </p>
+                        <div class="tags" style="cursor: default;">
+                            <span class="tag-chip">UI Interaction</span>
+                            <span class="tag-chip">Content Management</span>
+                            <span class="tag-chip">Problem Solving</span>
+                            <span class="tag-chip">AI Workflow</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee">
+            <div class="marquee-track mono">
+                <div class="marquee-set">
+                    <span>SEMANTIC HTML</span><span>INTERACTION &amp; JS</span><span>ACCESSIBILITY</span><span>AI
+                        WORKFLOW</span>
+                </div>
+                <div class="marquee-set">
+                    <span>SEMANTIC HTML</span><span>INTERACTION &amp; JS</span><span>ACCESSIBILITY</span><span>AI
+                        WORKFLOW</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES -->
+        <section id="services">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="what-i-do"&gt;</span>
+                        <h2 class="section-title">What I Do</h2>
+                    </div>
+                    <p class="section-desc">보이는 화면 너머, 구조까지 책임지는 작업</p>
+                </div>
+                <div class="services">
+                    <div class="service reveal">
+                        <span class="num">01 / markup</span>
+                        <h3>Semantic Markup</h3>
+                        <p>보이지 않는 곳까지 정확하게 짜는 구조. <br>접근성과 SEO까지 고려한 시맨틱 HTML</p>
+                    </div>
+                    <div class="service reveal">
+                        <span class="num">02 / motion</span>
+                        <h3>Interaction &amp; JS</h3>
+                        <p>정적인 화면에 호흡을 더하는 코드. <br>스크롤, 호버, 트랜지션까지 디테일하게</p>
+                    </div>
+                    <div class="service reveal">
+                        <span class="num">03 / responsive</span>
+                        <h3>Responsive &amp; A11y</h3>
+                        <p>어떤 화면, 어떤 사용자에게도 같은 품질의 경험을 <br>전달하는 퍼블리싱</p>
+                    </div>
+                    <div class="service reveal">
+                        <span class="num">04 / ai</span>
+                        <h3>AI-Assisted Workflow</h3>
+                        <p>사람의 디테일과 AI의 속도를 함께. <br>더 빠르게, 더 정교하게 결과물을 만드는 방식</p>
+                    </div>
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
+        <!--
+    이미지 교체 안내 (Work / Lab / AI Collab 공통):
+    1) 아래 .card-thumb div 안에 <img src="실제경로.jpg"> 한 줄만 추가하세요.
+       이미지의 실제 가로/세로 비율 그대로 카드 높이가 자동으로 정해집니다(핀터레스트 스타일).
+    2) 배경 그라디언트(--g1, --g2)는 이미지가 들어가면 안 보이니 그대로 둬도 무방합니다.
+    3) 카드를 감싸는 <a> 태그의 href="#" 부분을 실제 프로젝트 링크로 교체하세요. (현재는 새 탭으로 열리도록 target="_blank" 설정됨)
+  -->
+        <!-- WORK -->
+        <section id="work">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="work"&gt;</span>
+                        <h2 class="section-title">Work</h2>
+                    </div>
+                    <p class="section-desc">실무에서 경험한 프로젝트와 결과물</p>
+                </div>
+                <div class="card-grid">
+                    <a href="https://www.viewclinic.com/" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="work-04"&gt;'
+                            style="--g1:#3a2f22; --g2:#15171a;">
+                            <img src="./img/view_kr.png" alt="viewclinic_kr">
+                            <!-- <span class="card-label">WORK / 04</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Clinic Website</span>
+                            <h3>뷰성형외과 국내 공식홈페이지</h3>
+                            <p>워드프레스 기반 웹사이트 운영 및 퍼블리싱. 신규 페이지 제작과 유지보수, 반응형 최적화</p>
+                        </div>
+                    </a>
+                    <a href="https://www.viewplasticsurgery.com/" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="work-03"&gt;'
+                            style="--g1:#243228; --g2:#15171a;">
+                            <img src="./img/view_gl.png" alt="viewclinic_gl">
+                            <!-- <span class="card-label">WORK / 03</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Global Website</span>
+                            <h3>뷰성형외과 글로벌 홈페이지</h3>
+                            <p>전체 글로벌 홈페이지 운영을 담당하며 페이지 제작, 콘텐츠 업데이트, 유지보수</p>
+                        </div>
+                    </a>
+                    <a href="https://www.mailplug.com/" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="work-02"&gt;'
+                            style="--g1:#2a2435; --g2:#15171a;">
+                            <img src="./img/mailplug.jpg" alt="mailplug">
+                            <!-- <span class="card-label">WORK / 02</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Email Service Platform</span>
+                            <h3>메일플러그</h3>
+                            <p>웹사이트 유지보수 및 퍼블리싱</p>
+                        </div>
+                    </a>
+                    <a href="https://www.creatorlink.com/" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="work-01"&gt;'
+                            style="--g1:#332523; --g2:#15171a;">
+                            <img src="./img/creatorlink.jpg" alt="creatorlink">
+                            <!-- <span class="card-label">WORK / 01</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Website Builder</span>
+                            <h3>크리에이터링크</h3>
+                            <p>웹사이트 유지보수 및 템플릿 제작, 퍼블리싱</p>
+                        </div>
+                    </a>
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
+        <!-- LAB -->
+        <section id="lab">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="lab"&gt;</span>
+                        <h2 class="section-title">Lab</h2>
+                    </div>
+                    <p class="section-desc">기획부터 디자인, 구현까지 자유롭게 탐구한 작업물</p>
+                </div>
+                <div class="card-grid">
+                    <a href="#" target="_blank" rel="noopener" class="card reveal" style="cursor: default; pointer-events:none;">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="lab-05"&gt;'
+                            style="--g1:#1f2e33; --g2:#15171a;">
+                            <img src="./img/bing.jpg" alt="binggrae-clone">
+                            <!-- <span class="card-label">LAB / 05</span> -->
+                            <span class="status-badge is-wip">WIP</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Clone Coding</span>
+                            <h3>빙그레</h3>
+                            <p>실제 서비스를 분석하며 레이아웃 구조와 UI 인터랙션을 구현한 퍼블리싱 학습 프로젝트</p>
+                        </div>
+                    </a>
+                    <a href="./project/light/main.html" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="lab-04"&gt;'
+                            style="--g1:#2e2a1f; --g2:#15171a;">
+                            <img src="./img/lighting.png" alt="light">
+                            <!-- <span class="card-label">LAB / 04</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Personal Project</span>
+                            <h3>Lighting</h3>
+                            <p>존재하지 않는 페이지를 직접 기획하고 디자인하여 구현한 프로젝트</p>
+                        </div>
+                    </a>
+                    <a href="./project/lala/main.html" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="lab-03"&gt;'
+                            style="--g1:#332023; --g2:#15171a;">
+                            <img src="./img/lala.png" alt="lalabread">
+                            <!-- <span class="card-label">LAB / 03</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Redesign Project</span>
+                            <h3>라라브레드</h3>
+                            <p>브랜드 아이덴티티를 강화하고 콘텐츠 구조를 개선하여 재구성한 프로젝트</p>
+                        </div>
+                    </a>
+                    <a href="./project/ikea/index.html" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="lab-02"&gt;'
+                            style="--g1:#262830; --g2:#15171a;">
+                            <img src="./img/ikea.png" alt="ikea">
+                            <!-- <span class="card-label">LAB / 02</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Redesign Project</span>
+                            <h3>IKEA</h3>
+                            <p>복잡한 정보 구조를 정리하고 사용자 경험 중심으로 재설계한 프로젝트</p>
+                        </div>
+                    </a>
+                    <a href="./project/hollys/index.html" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="lab-01"&gt;'
+                            style="--g1:#2b2620; --g2:#15171a;">
+                            <img src="./img/hollys.png" alt="hollys">
+                            <!-- <span class="card-label">LAB / 01</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Redesign Project</span>
+                            <h3>Hollys</h3>
+                            <p>브랜드 경험과 사용자 흐름을 고려해 UI를 새롭게 개선한 리디자인 프로젝트</p>
+                        </div>
+                    </a>
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
+        <!-- META / AI -->
+        <section id="meta">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="ai-collab"&gt;</span>
+                        <h2 class="section-title">AI Collab</h2>
+                    </div>
+                    <p class="section-desc">AI를 도구가 아닌 협업 파트너로 활용한 프로젝트</p>
+                </div>
+                <div class="card-grid">
+                    <a href="index.html" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="AI ASSISTED"&gt;'
+                            style="--g1:#3a3022; --g2:#15171a;">
+                            <span class="status-badge is-live">LIVE</span>
+                            <img src="./img/portfolio.jpg" alt="Portfolio">
+                            <!-- <span class="card-label">AI / 01</span> -->
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Web</span>
+                            <h3>Portfolio</h3>
+                            <p>AI를 협업 도구로 기획부터 디자인, 코드까지</p>
+                        </div>
+                    </a>
+                    <!-- <a href="#" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="ai-web"&gt;'
+                            style="--g1:#22312f; --g2:#15171a;">
+                            <span class="status-badge is-soon">COMING SOON</span>
+                            <span class="card-label">AI / 02</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Web</span>
+                            <h3>AI 활용 웹페이지 디자인</h3>
+                            <p>AI와 함께 기획하고 디자인할 예정인 웹페이지 작업.</p>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="ai-poster"&gt;'
+                            style="--g1:#332338; --g2:#15171a;">
+                            <span class="status-badge is-soon">COMING SOON</span>
+                            <span class="card-label">AI / 03</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">Poster</span>
+                            <h3>AI 포스터 디자인</h3>
+                            <p>AI 이미지와 디자인을 접목한 포스터 작업.</p>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="ai-uiux"&gt;'
+                            style="--g1:#202c34; --g2:#15171a;">
+                            <span class="status-badge is-soon">COMING SOON</span>
+                            <span class="card-label">AI / 04</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">UX Planning</span>
+                            <h3>UI/UX 기획안</h3>
+                            <p>AI를 활용해 정리할 서비스 기획 및 와이어프레임.</p>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="card reveal">
+                        <div class="card-thumb tag-target" data-tag='&lt;figure class="ai-bx"&gt;'
+                            style="--g1:#332523; --g2:#15171a;">
+                            <span class="status-badge is-soon">COMING SOON</span>
+                            <span class="card-label">AI / 05</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="cat">BX / Detail Page</span>
+                            <h3>상세페이지 디자인</h3>
+                            <p>브랜드 경험(BX) 요소를 담은 상세페이지 디자인 작업.</p>
+                        </div>
+                    </a> -->
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-eyebrow">&lt;section id="contact"&gt;</span>
+                        <h2 class="section-title">Let's build <br>what's next.</h2>
+                    </div>
+                    <p class="section-desc">새로운 프로젝트나 협업 제안, <br>가볍게 던지는 안부 인사까지 모두 좋습니다.</p>
+                </div>
+                <div class="contact-row reveal">
+                    <a href="mailto:jhyang053@gmail.com" class="email-link" id="emailLink"
+                        data-text="jhyang053@gmail.com">jhyang053@gmail.com</a>
+                    <span class="copy-feedback" id="copyFeedback">복사됨</span>
+                </div>
+                <p class="section-close">&lt;/section&gt;</p>
+            </div>
+        </section>
+
     </main>
 
-    <section class="info_wrap">
-        <div class="info">
-            <div class="img_wrap" data-aos="fade-up" data-aos-duration="2000">
-                <img src="img/me.png" alt="me">
-            </div>
-            <div class="text_wrap" data-aos="fade-up" data-aos-duration="2000">
-                안녕하세요! 웹 퍼블리셔 양지호입니다.<br>
-                긍정적인 영향력을 주는 든든한 팀원이 되고,<br>
-                어떤 일이든 자신감 있게 도전하며 성장하는 사람이 되겠습니다.
-                <p><a href="https://accessible-waiter-71d.notion.site/Publisher-f2e14a8423fc4725b985ca457f101f1a" target="_blank">자기소개 더보기</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="work_exp">
-        <div class="work">
-            <h2 data-aos="fade-up" data-aos-duration="2000">WORK EXPERIENCE</h2>
-            <ul>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="https://www.viewclinic.com/" target="_blank">
-                        <img src="img/view_ko1.png" alt="view_ko">
-                        <span>뷰성형외과</span><br>
-                        퍼블리싱 · 웹 · 반응형 · 유지보수 · QA
-                    </a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="https://www.viewplasticsurgery.com/" target="_blank">
-                        <img src="img/view_global.png" alt="view_global">
-                        <span>뷰성형외과 글로벌</span><br>
-                        퍼블리싱 · 웹 · 반응형 · 유지보수 · QA
-                    </a>
-                </li>
-            </ul>
-            <ul>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="https://www.mailplug.com/" target="_blank">
-                        <img src="img/img6.jpg" alt="mailplug">
-                        <span>메일플러그</span><br>
-                        퍼블리싱 · 유지보수
-                    </a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="https://www.creatorlink.com/" target="_blank">
-                        <img src="img/img5.jpg" alt="creatorlink">
-                        <span>크리에이터링크</span><br>
-                        퍼블리싱 · 웹 · 반응형 · 유지보수
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="popo_exp">
-        <div class="popo">
-            <h2 data-aos="fade-up" data-aos-duration="2000">MY PORTFORIO</h2>
-            <ul>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="#" target="_blank">
-                        <img class="incomplete" src="img/img7.jpg" alt="빙그레">
-                        <span>빙그레</span><br>
-                        [진행중] 퍼블리싱 · 웹
-                    </a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="project/light/main.html" target="_blank">
-                        <img src="img/img4.jpg" alt="라이트">
-                        <span>라이트</span><br>
-                        퍼블리싱 · 웹 · 기획 · 디자인
-                    </a>
-                </li>
-            </ul>
-            <ul>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="project/lala/main.html" target="_blank">
-                        <img src="img/img2.jpg" alt="라라브레드">
-                        <span>라라브레드</span><br>
-                        퍼블리싱 · 웹 · 반응형 · 기획 · 디자인 · 리뉴얼
-                    </a>
-                </li>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="project/ikea/index.html" target="_blank">
-                        <img src="img/img1.jpg" alt="이케아">
-                        <span>이케아</span><br>
-                        퍼블리싱 · 웹 · 기획 · 디자인 · 리뉴얼
-                    </a>
-                </li>
-            </ul>
-            <ul>
-                <li data-aos="fade-up" data-aos-duration="2000">
-                    <a href="project/hollys/index.html" target="_blank">
-                        <img src="img/img3.png" alt="할리스">
-                        <span>할리스</span><br>
-                        퍼블리싱 · 웹 · 반응형 · 기획 · 디자인 · 리뉴얼
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
     <footer>
-        <div class="contact_wrap">
-            <h2 data-aos="fade-up" data-aos-duration="2000">CONTACT</h2>
-            <div class="contact">
-                <ul>
-                    <li data-aos="fade-up" data-aos-duration="2000">
-                        <span>jhyang053@gmail.com</span>
-                        <p>자신감 있게 도전하며 성장하는 <br>
-                            웹 퍼블리셔 양지호입니다. 감사합니다 :)</p>
-                    </li>
-                    <li data-aos="fade-up" data-aos-duration="2000"><img src="img/contact_me.png" alt="footerMe"></li>
-                </ul>
-            </div>
-            <p>
-                © copyright Yang Ji Ho. All Right Reserved.
-            </p>
-        </div>
+        <div class="wrap">© 2026 Yang Ji Ho (Jyo). Built with code, coffee, and a little AI.</div>
     </footer>
+
+    <script src="./js/index.js"></script>
 
 </body>
 
