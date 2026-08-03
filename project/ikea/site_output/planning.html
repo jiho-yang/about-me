@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IKEA 리디자인 — 서비스 기획 케이스 스터디 | Jyo Portfolio</title>
+  <meta name="description"
+    content="IKEA 코리아 메인페이지 UX 리디자인 서비스 기획 케이스 스터디. AS-IS 분석, IA 설계, 기능정의서, Flowchart, 스토리보드, 화면설계서까지.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:image" content="https://jiho-yang.github.io/about-me/img/portfolio.jpg">
+  <meta property="og:url" content="https://jiho-yang.github.io/about-me/project/ikea/planning.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHRleHQgeD0iMzIiIHk9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSUJNIFBsZXggTW9ubywgTWVubG8sIENvbnNvbGFzLCBtb25vc3BhY2UiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iNDIiIHRleHRMZW5ndGg9IjU4IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiIGZpbGw9IiNlMmEzM2QiPiZsdDtKJmd0OzwvdGV4dD48L3N2Zz4K">
+  <style>
+    :root {
+      --navy: #101B2D;
+      --navy-2: #16233A;
+      --amber: #E3A63C;
+      --paper: #F5F6F8;
+      --ink: #1B222C;
+      --slate: #5B6472;
+      --line: #DEE2E8;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Manrope', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.06em;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: rgba(245, 246, 248, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar .back {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .topbar .back:hover {
+      color: var(--ink);
+    }
+
+    .topbar .proj {
+      font-size: 12px;
+      color: var(--slate);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      background: var(--navy);
+      color: var(--white);
+      padding: 100px 32px 90px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(227, 166, 60, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(227, 166, 60, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, transparent, black 15%, black 70%, transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.28;
+      font-weight: 900;
+      margin: 0 0 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p.lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #C7D0DE;
+      max-width: 640px;
+      margin: 0 0 40px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      margin-bottom: 40px;
+    }
+
+    .meta-row div span {
+      display: block;
+    }
+
+    .meta-row .label {
+      font-size: 11px;
+      color: #8A97AC;
+      margin-bottom: 6px;
+    }
+
+    .meta-row .val {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--navy);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    /* ---------- Overview strip ---------- */
+    .overview {
+      max-width: 1080px;
+      margin: 86px auto 0px;
+      padding: 56px 32px;
+      word-break: keep-all;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .overview .cell {
+      background: var(--white);
+      padding: 26px 22px;
+    }
+
+    .overview .cell .k {
+      font-size: 11px;
+      color: var(--amber);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .overview .cell .v {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    /* ---------- Sections ---------- */
+    .section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 86px 0px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+
+    .sec-num {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .sec-head h2 {
+      font-size: 26px;
+      font-weight: 900;
+      margin: 6px 0 0;
+      letter-spacing: -0.01em;
+    }
+
+    .sec-eyebrow {
+      font-size: 11px;
+      color: var(--slate);
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .sec-body {
+      padding: 0px 66px;
+    }
+
+    .sec-body p {
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--slate);
+      word-break: keep-all;
+      /* max-width: 680px; */
+      margin: 0 0 28px;
+    }
+
+    .figure {
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(16, 27, 45, 0.06);
+    }
+
+    .figure img {
+      width: 100%;
+    }
+
+    .figure .cap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      border-top: 1px solid var(--line);
+      font-size: 11.5px;
+      color: var(--slate);
+    }
+
+    .figure .cap .fig-label {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery .figure .cap {
+      font-size: 11px;
+    }
+
+    .pillbox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: var(--slate);
+    }
+
+    /* ---------- Next step / closing ---------- */
+    .closing {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 32px;
+    }
+
+    .closing-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+    }
+
+    .closing h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 0 0 16px;
+    }
+
+    .closing p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #B9C3D4;
+      max-width: 480px;
+    }
+
+    .next-card {
+      background: var(--navy-2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      padding: 28px;
+    }
+
+    .next-card .tag {
+      font-size: 11px;
+      color: var(--amber);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .next-card .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+      color: #DCE3ED;
+    }
+
+    .next-card .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .next-card .step .n {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(227, 166, 60, 0.16);
+      color: var(--amber);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    footer {
+      padding: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--slate);
+      background: var(--paper);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 70px 20px 60px;
+      }
+
+      .overview {
+        grid-template-columns: 1fr 1fr;
+        padding: 36px 20px;
+      }
+
+      .section {
+        padding: 56px 20px;
+      }
+
+      .sec-body {
+        padding-left: 0;
+        margin-top: 18px;
+      }
+
+      .sec-head {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .closing-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .meta-row {
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <a href="../../../index.html" class="back">← Jyo Portfolio</a>
+    <div class="proj mono">IKEA · SERVICE PLANNING</div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow mono"><span class="dot"></span>SERVICE PLANNING CASE STUDY</div>
+      <h1>IKEA 코리아 메인페이지<br>UX 리디자인 기획 과정</h1>
+      <p class="lead">실제 ikea.com/kr 구조를 분석해 정보구조 문제 3가지 도출<br> IA 재설계부터 기능정의서, Flowchart, 스토리보드, 화면설계서</p>
+
+      <div class="meta-row">
+        <div><span class="label mono">ROLE</span><span class="val">서비스 기획 · UI 설계 · 퍼블리싱</span></div>
+        <div><span class="label mono">SCOPE</span><span class="val">메인페이지 리디자인 + 핵심 구매 시나리오 기획</span></div>
+        <div><span class="label mono">TOOLS</span><span class="val">PPT · HTML/CSS/JS</span></div>
+        <div><span class="label mono">TYPE</span><span class="val">개인 학습 프로젝트</span></div>
+      </div>
+
+      <div class="cta-row">
+        <a href="../index.html" class="btn btn-primary">라이브 데모 보기 →</a>
+        <a href="IKEA_서비스기획문서.pdf" class="btn btn-ghost" target="_blank">기획문서 PDF 다운로드</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="overview">
+    <div class="cell">
+      <div class="k mono">BACKGROUND</div>
+      <div class="v">실제 IKEA 코리아 웹사이트의 정보구조를 분석하고, 사용자 중심 관점에서 재설계</div>
+    </div>
+    <div class="cell">
+      <div class="k mono">GOAL</div>
+      <div class="v">카테고리 탐색부터 구매 결정까지 이어지는 흐름을 목적 기준으로 재구성</div>
+    </div>
+    <div class="cell">
+      <div class="k mono">SCOPE</div>
+      <div class="v">메인페이지 UI 리디자인(완료) + 핵심 구매 시나리오 화면 설계(기획 단계)</div>
+    </div>
+    <div class="cell">
+      <div class="k mono">ROLE</div>
+      <div class="v">정보구조 설계·화면 설계·문서화·UI 디자인·퍼블리싱 전 과정 단독 수행</div>
+    </div>
+  </div>
+
+  <!-- 01 AS-IS -->
+  <section class="section" id="asis">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div><span class="sec-eyebrow mono">AS-IS ANALYSIS</span>
+        <h2>원본 사이트, 무엇이 문제였나</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>실제 ikea.com/kr을 직접 분석해 3가지 정보구조 문제를 확인했습니다. 카테고리 22개가 위계 없이 나열되어 스캔 시간이 길어지고, 서비스 정보가 본문과 푸터에 중복 노출되며, 목적이 다른
+        메뉴(아이디어·플래닝)가 하나로 묶여 있었습니다.</p>
+      <div class="figure">
+        <img src="images/slide-04.jpg" alt="AS-IS 분석 슬라이드" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 01</span><span>AS-IS 분석 — 원본 사이트 문제점 3가지</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 TO-BE -->
+  <section class="section" id="tobe">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div><span class="sec-eyebrow mono">TO-BE STRATEGY</span>
+        <h2>리디자인, 이렇게 풀었다</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>위 3가지 문제에 1:1로 대응하는 전략을 세웠습니다. 카테고리를 22개에서 10개로 압축해 그리드 카드로 재배치하고, 중복되던 서비스 정보를 푸터 한 곳으로 통합했으며, 목적이 다른 메뉴를 독립
+        항목으로 분리했습니다.</p>
+      <div class="figure">
+        <img src="images/slide-05.jpg" alt="TO-BE 전략 슬라이드" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 02</span><span>TO-BE 전략 — 문제별 대응 방안</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 IA -->
+  <section class="section" id="ia">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div><span class="sec-eyebrow mono">INFORMATION ARCHITECTURE</span>
+        <h2>IA 설계 — AS-IS vs TO-BE</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>GNB 구조와 카테고리 위계를 사이트맵 형태로 시각화해 AS-IS와 TO-BE를 나란히 비교했습니다. 우선순위 카테고리 10개로 압축한 구조가 상품 리스트 → 상세 → 장바구니로 이어지는 흐름과
+        어떻게 연결되는지 함께 보여줍니다.</p>
+      <div class="figure">
+        <img src="images/slide-06.jpg" alt="IA 설계 다이어그램" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 03</span><span>IA 다이어그램 — 사이트맵 비교</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Scenario -->
+  <section class="section" id="scenario">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div><span class="sec-eyebrow mono">SCENARIO & USER FLOW</span>
+        <h2>핵심 시나리오 정의</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="pillbox">
+        <span class="pill">페르소나 · 김민지 29세</span>
+        <span class="pill">6평 원룸 · 수납 공간 부족</span>
+        <span class="pill">예산 10만원대 수납가구 탐색</span>
+      </div>
+      <p>이후 기능정의서·Flowchart·스토리보드·화면설계서 전체를 관통하는 단일 시나리오를 페르소나 기반으로 정의했습니다. 메인 진입 → 카테고리 선택 → 리스트 탐색 → 상세 확인 → 장바구니 담기,
+        5단계 User Flow입니다.</p>
+      <div class="figure">
+        <img src="images/slide-07.jpg" alt="페르소나와 User Flow" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 04</span><span>페르소나 정의 &amp; User Flow</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Functional spec -->
+  <section class="section" id="funcspec">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div><span class="sec-eyebrow mono">FUNCTIONAL SPECIFICATION</span>
+        <h2>기능정의서</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>카테고리 필터링, 상품 옵션 선택, 장바구니 담기 3개 기능을 입력값·처리조건·예외처리·결과 단위로 명세했습니다. 화면을 그리기 전에 로직을 먼저 문서로 확정하는 단계입니다.</p>
+      <div class="figure">
+        <img src="images/slide-08.jpg" alt="기능정의서 표" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 05</span><span>기능정의서 — 핵심 기능 3종 명세</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Flowchart -->
+  <section class="section" id="flowchart">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div><span class="sec-eyebrow mono">FLOWCHART</span>
+        <h2>장바구니 담기 처리 흐름</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>'담기' 버튼 클릭 시 재고 여부와 로그인 상태에 따라 갈라지는 조건 분기를 플로우차트로 설계했습니다. 품절 시 안내, 비로그인 시 세션 기반 장바구니 저장까지 예외 케이스를 포함합니다.</p>
+      <div class="figure">
+        <img src="images/slide-09.jpg" alt="장바구니 담기 플로우차트" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 06</span><span>Flowchart — 조건 분기 포함 처리 흐름</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Storyboard -->
+  <section class="section" id="storyboard">
+    <div class="sec-head">
+      <div class="sec-num">07</div>
+      <div><span class="sec-eyebrow mono">STORYBOARD</span>
+        <h2>화면 전환 시나리오</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>김민지 페르소나가 메인에서 장바구니 담기까지 이동하는 과정을 5컷으로 시각화했습니다. 각 컷마다 사용자의 행동과 화면 전환을 함께 표기했습니다.</p>
+      <div class="figure">
+        <img src="images/slide-10.jpg" alt="5컷 스토리보드" loading="lazy">
+        <div class="cap"><span class="fig-label">FIG. 07</span><span>스토리보드 — 수납가구 탐색 시나리오 5컷</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Wireframe -->
+  <section class="section" id="wireframe">
+    <div class="sec-head">
+      <div class="sec-num">08</div>
+      <div><span class="sec-eyebrow mono">WIREFRAME & SCREEN SPEC</span>
+        <h2>화면설계서 — 상품 리스트 · 상세 · 장바구니</h2>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>스토리보드에서 정의한 화면 3개를 저해상도 와이어프레임으로 구체화하고, 각 요소마다 번호를 매겨 인터랙션을 설명하는 화면설계서 형태로 정리했습니다.</p>
+      <div class="gallery">
+        <div class="figure">
+          <img src="images/slide-11.jpg" alt="상품 리스트 화면설계" loading="lazy">
+          <div class="cap"><span class="fig-label">FIG. 08</span><span>상품 리스트</span></div>
+        </div>
+        <div class="figure">
+          <img src="images/slide-12.jpg" alt="상품 상세 화면설계" loading="lazy">
+          <div class="cap"><span class="fig-label">FIG. 09</span><span>상품 상세</span></div>
+        </div>
+        <div class="figure">
+          <img src="images/slide-13.jpg" alt="장바구니 화면설계" loading="lazy">
+          <div class="cap"><span class="fig-label">FIG. 10</span><span>장바구니</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="closing-inner">
+      <!-- <div>
+        <h3>이 프로젝트에서 증명하고 싶었던 것</h3>
+        <p>퍼블리셔로서 화면을 정확히 구현하는 능력에 더해, 그 화면이 나오기까지의 구조적 사고와 문제 정의, 정보 설계, 기능 명세, 예외 처리를 문서로 남기고 커뮤니케이션할 수 있다는 것을 보여주고 싶었습니다.</p>
+      </div> -->
+      <div class="next-card">
+        <div class="tag mono">NEXT STEP</div>
+        <div class="step"><span class="n">1</span><span>Figma로 상품 리스트·상세·장바구니를 클릭 가능한 프로토타입으로 연결</span></div>
+        <div class="step"><span class="n">2</span><span>실사용자 테스트 기반 IA·플로우 보완</span></div>
+        <div class="step"><span class="n">3</span><span>Service flow(재고·결제 처리) 문서 추가</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    IKEA Redesign — Service Planning Case Study · <a href="IKEA_서비스기획문서.pdf" target="_blank"
+      style="text-decoration:underline;">PDF 다운로드</a> · <a href="index.html" style="text-decoration:underline;">라이브
+      데모</a>
+  </footer>
+
+</body>
+
+</html>
